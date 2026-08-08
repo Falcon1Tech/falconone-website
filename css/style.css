@@ -1,0 +1,1520 @@
+/* =========================================================
+   FALCON ONE TECHNOLOGIES
+   Main Website Stylesheet
+   Brand: Blue / Red / White
+========================================================= */
+
+
+/* =========================================================
+   1. RESET & GLOBAL SETTINGS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #071a3d;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   2. BRAND VARIABLES
+========================================================= */
+
+:root {
+    --falcon-blue: #0757d9;
+    --falcon-blue-dark: #052a67;
+    --falcon-blue-light: #eaf3ff;
+
+    --falcon-red: #e3262e;
+    --falcon-red-dark: #b9161d;
+
+    --navy: #06172f;
+    --navy-light: #0b2447;
+
+    --text-dark: #071a3d;
+    --text: #26344d;
+    --text-light: #65738a;
+
+    --white: #ffffff;
+    --border: #dce6f3;
+
+    --shadow: 0 12px 35px rgba(6, 35, 80, 0.08);
+
+    --radius: 12px;
+}
+
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #edf1f7;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   FALCON ONE LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--text-dark);
+
+    padding: 31px 0;
+
+    transition: color 0.25s ease;
+}
+
+.main-nav a:hover {
+    color: var(--falcon-blue);
+}
+
+.main-nav a.active {
+    color: var(--falcon-blue);
+}
+
+.main-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 18px;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--falcon-blue);
+
+    border-radius: 10px;
+}
+
+
+/* Quote Button */
+
+.quote-button,
+.enquire-button {
+    padding: 13px 22px;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        var(--falcon-blue),
+        var(--falcon-red)
+    );
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.quote-button:hover,
+.enquire-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(7, 87, 217, 0.25);
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 520px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(7, 87, 217, 0.10),
+            transparent 40%
+        ),
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #ffffff 48%,
+            #f4f8ff 100%
+        );
+}
+
+.hero-container {
+    min-height: 520px;
+
+    display: grid;
+
+    grid-template-columns: 48% 52%;
+
+    align-items: center;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 0;
+}
+
+.hero-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--falcon-blue);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.hero-label::before {
+    content: "";
+
+    width: 30px;
+
+    height: 2px;
+
+    background: var(--falcon-blue);
+}
+
+.hero h1 {
+    max-width: 650px;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    color: var(--text-dark);
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--falcon-red);
+}
+
+.hero p {
+    max-width: 560px;
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-primary {
+    color: #ffffff;
+
+    background: var(--falcon-blue);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(7, 87, 217, 0.25);
+}
+
+.btn-secondary {
+    color: var(--falcon-blue);
+
+    border: 1px solid var(--falcon-blue);
+
+    background: #ffffff;
+}
+
+.btn-secondary:hover {
+    color: #ffffff;
+
+    background: var(--falcon-blue);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+
+    background-image: url("../assets/images/africa-tech-skyline.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 115% auto;
+}
+
+/* Falcon artwork sits above the skyline */
+
+.hero-falcon {
+    position: relative;
+    z-index: 2;
+
+    width: min(680px, 110%);
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    transform: translate(15px, 20px);
+
+    filter: drop-shadow(
+        0 20px 35px rgba(5, 42, 103, 0.15)
+    );
+
+    transition: transform 0.4s ease;
+}
+
+.hero-falcon:hover {
+    transform: translate(15px, 20px) scale(1.02);
+}
+
+/* =========================================================
+   5. TRUSTED BUSINESSES
+========================================================= */
+
+.trusted {
+    padding: 25px 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #edf2f8;
+
+    border-bottom: 1px solid #edf2f8;
+}
+
+.section-label {
+    color: var(--falcon-blue);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+.trusted .section-label {
+    text-align: center;
+}
+
+.trusted-items {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    text-align: center;
+}
+
+.trusted-items span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 58px;
+    padding: 12px 10px;
+
+    color: var(--text-dark);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1px;
+
+    background: #f8fbff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.trusted-items span:hover {
+    transform: translateY(-2px);
+
+    border-color: #c6daf7;
+
+    box-shadow: 0 6px 18px rgba(6, 35, 80, 0.07);
+}
+
+
+/* =========================================================
+   6. SERVICES
+========================================================= */
+
+.services {
+    padding: 85px 0;
+
+    background: #f5f9ff;
+}
+
+.section-heading {
+    max-width: 600px;
+
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    color: var(--text-dark);
+
+    font-size: clamp(30px, 3vw, 42px);
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: var(--text);
+
+    font-size: 16px;
+}
+
+
+/* Services Grid */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.service-card {
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1eaf6;
+
+    border-radius: var(--radius);
+
+    box-shadow: 0 5px 20px rgba(6, 35, 80, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c6daf7;
+
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    color: var(--falcon-blue);
+
+    font-size: 28px;
+
+    border-radius: 10px;
+
+    background: var(--falcon-blue-light);
+}
+
+.service-card h3 {
+    color: var(--text-dark);
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.service-card a {
+    color: var(--falcon-blue);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.service-card a:hover {
+    color: var(--falcon-red);
+}
+
+
+/* =========================================================
+   7. ABOUT SECTION
+========================================================= */
+
+.about {
+    padding: 85px 0;
+
+    background: #ffffff;
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 40% 60%;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.about h2 {
+    max-width: 500px;
+
+    color: var(--text-dark);
+
+    font-size: clamp(30px, 3vw, 42px);
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 520px;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* Statistics */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-left: 1px solid var(--border);
+}
+
+.stat {
+    padding: 20px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--border);
+}
+
+.stat strong {
+    display: block;
+
+    color: var(--falcon-blue);
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.stat:last-child strong {
+    color: var(--falcon-red);
+}
+
+.stat span {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   8. INDUSTRIES
+========================================================= */
+
+.industries {
+    padding: 65px 0;
+
+    text-align: center;
+
+    background: #f8fbff;
+}
+
+.industries-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin: 30px 0;
+}
+
+.industries-grid span {
+    padding: 18px 8px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+.industry-tagline {
+    color: var(--text);
+
+    font-size: 15px;
+}
+
+.industry-tagline strong:first-of-type {
+    color: var(--falcon-blue);
+}
+
+.industry-tagline strong:last-of-type {
+    color: var(--falcon-red);
+}
+
+
+/* =========================================================
+   9. FOOTER
+========================================================= */
+
+.site-footer {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #031126,
+            #061d3e
+        );
+
+    padding-top: 65px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1.3fr 1.2fr;
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+}
+
+.site-footer h3 {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.site-footer h4 {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.site-footer p {
+    color: #aebbd0;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.site-footer a {
+    display: block;
+
+    color: #aebbd0;
+
+    font-size: 13px;
+
+    margin-bottom: 9px;
+
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    padding: 18px;
+
+    text-align: center;
+
+    color: #8fa1ba;
+
+    font-size: 12px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   10. RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        gap: 17px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        border-left: none;
+    }
+
+    .industries-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .nav-container {
+        min-height: 70px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .quote-button,
+.enquire-button {
+        margin-left: auto;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 65px 0 30px;
+    }
+
+    .hero-label {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 300px;
+    }
+
+    .falcon-placeholder {
+        height: 250px;
+        font-size: 35px;
+    }
+
+    .trusted-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .quote-button,
+.enquire-button {
+        padding: 10px 14px;
+
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo-tech {
+        margin-top: 35px;
+
+        font-size: 6px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================================
+   FALCON ONE — RESOURCES SECTION
+========================================================= */
+
+.resources {
+    padding: 90px 0;
+    background: #f5f8fd;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.resource-card {
+    background: #ffffff;
+    border: 1px solid #dbe5f3;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(5, 42, 103, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(5, 42, 103, 0.10);
+}
+
+.resource-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    background: #eaf2ff;
+    color: #0757d5;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.resource-card h3 {
+    margin-bottom: 12px;
+}
+
+.resource-card p {
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.resource-card a {
+    color: #0757d5;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.resource-card a:hover {
+    color: #e5232d;
+}
+
+.resources-note {
+    margin-top: 30px;
+    padding: 20px 24px;
+    border-left: 4px solid #0757d5;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   FALCON ONE — LIVE SITE FINAL REFINEMENTS
+========================================================= */
+
+/* Keep anchored sections from hiding underneath the sticky header */
+#home,
+#services,
+#about,
+#industries,
+#resources,
+#contact {
+    scroll-margin-top: 82px;
+}
+
+/* Resources */
+.resources {
+    scroll-margin-top: 82px;
+}
+
+.resources .section-heading {
+    margin-bottom: 0;
+}
+
+.resource-card {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card a {
+    margin-top: auto;
+}
+
+/* Resources note / CTA */
+.resources-note p {
+    margin: 0;
+    color: var(--text);
+}
+
+/* Contact / enquiry area — compatible with the live index */
+.contact {
+    padding: 85px 0;
+    background: #ffffff;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    color: var(--text-dark);
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.contact-info p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.contact-details {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-details a {
+    color: var(--falcon-blue);
+    font-weight: 700;
+}
+
+.contact-details a:hover {
+    color: var(--falcon-red);
+}
+
+.contact-form {
+    padding: 32px;
+    background: #f8fbff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 13px 14px;
+    margin-bottom: 17px;
+    color: var(--text-dark);
+    font: inherit;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+    min-height: 135px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--falcon-blue);
+    box-shadow: 0 0 0 3px rgba(7, 87, 217, 0.10);
+}
+
+.contact-form .btn {
+    border: 0;
+    cursor: pointer;
+}
+
+/* Make enquiry CTA visually consistent with the brand */
+.enquire-button {
+    white-space: nowrap;
+}
+
+/* Hero image safety */
+.hero-falcon {
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* Prevent the skyline artwork from becoming too dominant */
+.hero-visual {
+    background-size: 115% auto;
+    background-position: center bottom;
+}
+
+/* =========================================================
+   RESPONSIVE — LIVE SITE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-visual {
+        background-size: 100% auto;
+    }
+
+    .hero-falcon {
+        width: min(620px, 100%);
+        max-height: 430px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .main-logo {
+        width: 125px;
+    }
+
+    .hero-visual {
+        min-height: 320px;
+        background-size: 125% auto;
+    }
+
+    .hero-falcon {
+        width: min(520px, 110%);
+        max-height: 340px;
+        transform: translate(0, 10px);
+    }
+
+    .hero-falcon:hover {
+        transform: translate(0, 10px) scale(1.01);
+    }
+
+    .resources,
+    .contact {
+        padding: 65px 0;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .enquire-button {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .hero-visual {
+        min-height: 270px;
+        background-size: 145% auto;
+    }
+
+    .hero-falcon {
+        width: 115%;
+        max-height: 300px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   FALCON ONE — ENQUIRY SECTION FINAL LAYOUT
+   ========================================================= */
+
+.contact-enquiry {
+    padding: 90px 0;
+    background: #ffffff;
+    scroll-margin-top: 82px;
+}
+
+.enquiry-container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 70px;
+    align-items: start;
+}
+
+.enquiry-intro {
+    padding-top: 8px;
+}
+
+.enquiry-intro h2 {
+    margin: 0 0 20px;
+    color: var(--text-dark);
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.08;
+}
+
+.enquiry-lead {
+    max-width: 590px;
+    margin: 0;
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.enquiry-direct {
+    margin-top: 38px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+}
+
+.enquiry-direct > p {
+    margin: 0 0 18px;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+.direct-contact {
+    display: grid;
+    gap: 13px;
+}
+
+.direct-contact div {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.direct-contact span {
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.direct-contact a {
+    color: var(--falcon-blue);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.direct-contact a:hover {
+    color: var(--falcon-red);
+}
+
+.enquiry-note {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 28px;
+    padding: 18px 20px;
+    background: #f5f9ff;
+    border-left: 3px solid var(--falcon-blue);
+    border-radius: 0 8px 8px 0;
+}
+
+.enquiry-note strong {
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.enquiry-note span {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.enquiry-form-wrap {
+    padding: 34px;
+    background: #f8fbff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 14px 40px rgba(5, 42, 103, 0.07);
+}
+
+.enquiry-form-header {
+    margin-bottom: 25px;
+}
+
+.enquiry-form-header h3 {
+    margin: 0 0 7px;
+    color: var(--text-dark);
+    font-size: 25px;
+}
+
+.enquiry-form-header p {
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.enquiry-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+}
+
+.enquiry-form .form-group {
+    min-width: 0;
+}
+
+.enquiry-form .form-group-full {
+    grid-column: 1 / -1;
+}
+
+.enquiry-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 13px;
+    color: var(--text-dark);
+    background: #ffffff;
+    border: 1px solid #d8e2f0;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.enquiry-form textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+    border-color: var(--falcon-blue);
+    box-shadow: 0 0 0 3px rgba(7, 87, 217, 0.10);
+}
+
+.enquiry-form input::placeholder,
+.enquiry-form textarea::placeholder {
+    color: #8a98aa;
+}
+
+.enquiry-form .btn {
+    margin-top: 22px;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Give the seven services a balanced final card */
+.services-grid .service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.services-grid .service-card a {
+    margin-top: auto;
+}
+
+/* =========================================================
+   ENQUIRY RESPONSIVE LAYOUT
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .enquiry-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .enquiry-intro h2 {
+        font-size: clamp(36px, 7vw, 50px);
+    }
+}
+
+@media (max-width: 620px) {
+    .contact-enquiry {
+        padding: 65px 0;
+    }
+
+    .enquiry-form-wrap {
+        padding: 24px 20px;
+    }
+
+    .enquiry-form .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .enquiry-form .form-group-full {
+        grid-column: auto;
+    }
+
+    .direct-contact div {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+}
