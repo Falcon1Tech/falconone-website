@@ -2645,3 +2645,211 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         min-height: 68px !important;
     }
 }
+
+
+/* =========================================================
+   FALCON ONE — HERO LOGO FLIGHT
+   The official Falcon One Technologies logo is the hero visual.
+   It stays fully contained in the hero area and uses subtle
+   flight/orbit motion rather than the previous rectangular artwork.
+========================================================= */
+
+.hero-visual {
+    overflow: hidden !important;
+}
+
+.hero-visual::before {
+    background: none !important;
+}
+
+.hero-visual::after {
+    background:
+        radial-gradient(circle at 55% 50%, rgba(16,126,255,.16), transparent 34%),
+        radial-gradient(circle at 72% 54%, rgba(229,38,47,.06), transparent 28%) !important;
+    pointer-events: none;
+}
+
+.hero-falcon-stage {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 620px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    isolation: isolate;
+}
+
+.hero-logo-aura {
+    position: absolute;
+    width: min(510px, 82%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15,126,255,.18) 0%, rgba(15,126,255,.07) 36%, transparent 70%);
+    filter: blur(2px);
+    animation: logoAuraPulse 4.5s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero-logo-ring {
+    position: absolute;
+    border: 1px solid rgba(55,157,255,.22);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-logo-ring-one {
+    width: min(560px, 90%);
+    aspect-ratio: 1;
+    animation: logoRingRotate 16s linear infinite;
+}
+
+.hero-logo-ring-two {
+    width: min(450px, 72%);
+    aspect-ratio: 1;
+    border-color: rgba(229,38,47,.12);
+    animation: logoRingRotateReverse 12s linear infinite;
+}
+
+.hero-logo-ring-one::before,
+.hero-logo-ring-one::after,
+.hero-logo-ring-two::before,
+.hero-logo-ring-two::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1683ff;
+    box-shadow: 0 0 14px rgba(22,131,255,.9);
+}
+
+.hero-logo-ring-one::before { top: -3px; left: 50%; }
+.hero-logo-ring-one::after { bottom: -3px; left: 50%; }
+.hero-logo-ring-two::before { left: -3px; top: 50%; background: #e3262e; box-shadow: 0 0 14px rgba(229,38,47,.7); }
+.hero-logo-ring-two::after { right: -3px; top: 50%; }
+
+.hero-falcon {
+    position: relative !important;
+    z-index: 3 !important;
+    display: block !important;
+    width: min(590px, 92%) !important;
+    max-width: 590px !important;
+    height: auto !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    transform-origin: 50% 55%;
+    filter:
+        drop-shadow(0 22px 35px rgba(0,0,0,.38))
+        drop-shadow(0 0 26px rgba(15,126,255,.18));
+    animation: logoFlight 5.8s ease-in-out infinite !important;
+    will-change: transform, filter;
+}
+
+@keyframes logoFlight {
+    0%, 100% {
+        transform: translate3d(0, 7px, 0) rotate(-1deg) scale(1);
+        filter:
+            drop-shadow(0 22px 35px rgba(0,0,0,.38))
+            drop-shadow(0 0 26px rgba(15,126,255,.18));
+    }
+    20% {
+        transform: translate3d(7px, -4px, 0) rotate(.5deg) scale(1.012);
+    }
+    42% {
+        transform: translate3d(-5px, -15px, 0) rotate(1.2deg) scale(1.025);
+        filter:
+            drop-shadow(0 28px 40px rgba(0,0,0,.40))
+            drop-shadow(0 0 34px rgba(15,126,255,.27));
+    }
+    58% {
+        transform: translate3d(-8px, -8px, 0) rotate(.2deg) scale(1.018);
+    }
+    80% {
+        transform: translate3d(5px, 0, 0) rotate(-.6deg) scale(1.008);
+    }
+}
+
+@keyframes logoAuraPulse {
+    0%, 100% { transform: scale(.94); opacity: .62; }
+    50% { transform: scale(1.08); opacity: .95; }
+}
+
+@keyframes logoRingRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes logoRingRotateReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    .hero-falcon,
+    .hero-logo-aura,
+    .hero-logo-ring {
+        animation: none !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero-falcon-stage {
+        min-height: 560px !important;
+    }
+
+    .hero-falcon {
+        width: min(500px, 92%) !important;
+        max-width: 500px !important;
+    }
+
+    .hero-logo-ring-one {
+        width: min(500px, 92%);
+    }
+
+    .hero-logo-ring-two {
+        width: min(395px, 72%);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-visual {
+        height: 420px !important;
+    }
+
+    .hero-falcon-stage {
+        min-height: 420px !important;
+    }
+
+    .hero-falcon {
+        width: min(420px, 94%) !important;
+        max-width: 420px !important;
+    }
+
+    .hero-logo-ring-one {
+        width: 430px;
+        max-width: 96%;
+    }
+
+    .hero-logo-ring-two {
+        width: 340px;
+        max-width: 76%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-visual {
+        height: 350px !important;
+    }
+
+    .hero-falcon-stage {
+        min-height: 350px !important;
+    }
+
+    .hero-falcon {
+        width: min(350px, 96%) !important;
+    }
+}
