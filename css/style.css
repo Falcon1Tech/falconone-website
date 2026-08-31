@@ -2286,3 +2286,362 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     .nav-container{min-height:76px;}
     .main-logo{width:148px;}
 }
+
+
+/* =========================================================
+   FALCON ONE — LAYOUT CORRECTION / FINAL POLISH
+   Targeted fixes based on the latest local preview:
+   • hero Falcon is intentionally oversized and cinematic
+   • services remain a compact 4 × 3 premium matrix
+   • About statistics stay on one horizontal row on desktop
+   • content widths are consistent across sections
+   • footer is genuinely compact
+========================================================= */
+
+/* Keep the page centred and prevent oversized section whitespace */
+.container {
+    width: min(1220px, 92%);
+}
+
+/* HERO — make the Falcon the visual focus */
+.hero {
+    min-height: 620px !important;
+    overflow: hidden;
+}
+
+.hero-container {
+    min-height: 620px !important;
+    grid-template-columns: 42% 58% !important;
+    column-gap: 10px;
+}
+
+.hero-content {
+    padding: 72px 0 68px !important;
+}
+
+.hero-visual {
+    min-height: 620px !important;
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Remove the duplicate background artwork behind the actual Falcon image. */
+.hero-visual::before,
+.hero-visual::after {
+    background: none !important;
+}
+
+/* The artwork is deliberately allowed to extend beyond its grid cell. */
+.hero-falcon-stage {
+    width: 100% !important;
+    min-height: 620px !important;
+    overflow: visible !important;
+}
+
+.hero-falcon {
+    display: block !important;
+    width: 980px !important;
+    max-width: none !important;
+    height: auto !important;
+    margin-right: -150px !important;
+    transform-origin: 50% 55%;
+    filter:
+        drop-shadow(0 28px 42px rgba(0,0,0,.42))
+        drop-shadow(0 0 28px rgba(8,120,255,.18));
+    animation: falconFlightPremium 6s ease-in-out infinite !important;
+    will-change: transform;
+}
+
+@keyframes falconFlightPremium {
+    0%, 100% {
+        transform: translate3d(18px, 10px, 0) rotate(-1deg) scale(1);
+    }
+    20% {
+        transform: translate3d(4px, -5px, 0) rotate(.2deg) scale(1.015);
+    }
+    42% {
+        transform: translate3d(-18px, -16px, 0) rotate(1.1deg) scale(1.03);
+    }
+    55% {
+        transform: translate3d(-8px, -10px, 0) rotate(.3deg) scale(1.02);
+    }
+    78% {
+        transform: translate3d(12px, -2px, 0) rotate(-.4deg) scale(1.012);
+    }
+}
+
+/* Keep the technology/orbit treatment behind the enlarged Falcon. */
+.hero-tech-grid { z-index: 0 !important; }
+.hero-orbit { z-index: 1 !important; }
+.hero-falcon-stage { z-index: 2 !important; }
+.hero-falcon { position: relative; z-index: 3 !important; }
+
+/* SERVICES — lock the intended premium 4 × 3 composition */
+.services {
+    padding: 70px 0 74px !important;
+}
+
+.services .container {
+    width: min(1220px, 92%);
+}
+
+.services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.service-card {
+    min-height: 276px !important;
+    padding: 0 0 16px !important;
+}
+
+.service-visual {
+    height: 118px !important;
+}
+
+.service-copy {
+    padding: 0 15px !important;
+}
+
+.service-card h3 {
+    font-size: 14px !important;
+}
+
+.service-card p {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    min-height: 50px !important;
+}
+
+/* ABOUT — compact, balanced split with five stats in one row */
+.about {
+    padding: 0 !important;
+}
+
+.about-container {
+    width: min(1220px, 92%);
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.65fr) !important;
+    gap: 42px !important;
+    padding: 58px 0 !important;
+}
+
+.about-container > div:first-child {
+    min-width: 0;
+}
+
+.stats {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-left: 1px solid rgba(7,87,217,.13) !important;
+}
+
+.stat {
+    min-width: 0 !important;
+    padding: 24px 12px !important;
+}
+
+.stat strong {
+    font-size: 30px !important;
+}
+
+/* INDUSTRIES — reduce the empty feeling while retaining the cards */
+.industries {
+    padding: 68px 0 62px !important;
+}
+
+.industries-grid {
+    margin-top: 34px !important;
+    gap: 12px !important;
+}
+
+/* RESOURCES — tighter and more deliberate */
+.resources {
+    padding: 68px 0 !important;
+}
+
+.resources .section-heading {
+    margin-bottom: 32px !important;
+}
+
+/* ENQUIRY — keep the form substantial but avoid excessive vertical padding */
+.contact-enquiry {
+    padding: 72px 0 !important;
+}
+
+/* FOOTER — genuinely small */
+.site-footer {
+    padding: 0 !important;
+    min-height: 0 !important;
+}
+
+.site-footer .footer-inner {
+    min-height: 64px !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+    gap: 18px !important;
+}
+
+.site-footer .footer-brand {
+    gap: 8px !important;
+}
+
+.site-footer .footer-logo {
+    width: 44px !important;
+    height: 44px !important;
+    max-width: 44px !important;
+    min-width: 44px !important;
+    object-fit: contain !important;
+}
+
+.site-footer .footer-brand strong {
+    font-size: 10px !important;
+    letter-spacing: .6px !important;
+}
+
+.site-footer .footer-brand span {
+    font-size: 9px !important;
+    margin-top: 0 !important;
+}
+
+.site-footer .footer-links {
+    gap: 11px !important;
+}
+
+.site-footer .footer-links a,
+.site-footer .footer-email {
+    font-size: 9px !important;
+    margin-bottom: 0 !important;
+}
+
+.site-footer .copyright {
+    min-height: 28px !important;
+    padding: 6px 12px !important;
+    font-size: 8px !important;
+    line-height: 1.3 !important;
+}
+
+.site-footer .copyright .designed-by a {
+    font-size: inherit !important;
+}
+
+/* Desktop: keep footer on one compact line. */
+@media (min-width: 761px) {
+    .site-footer .footer-inner {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+}
+
+/* TABLET / MOBILE */
+@media (max-width: 1100px) {
+    .hero-container {
+        grid-template-columns: 45% 55% !important;
+    }
+
+    .hero-falcon {
+        width: 820px !important;
+        margin-right: -120px !important;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .stats {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero,
+    .hero-container,
+    .hero-visual,
+    .hero-falcon-stage {
+        min-height: auto !important;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-content {
+        padding: 58px 0 12px !important;
+    }
+
+    .hero-visual {
+        height: 390px !important;
+    }
+
+    .hero-falcon {
+        width: 760px !important;
+        max-width: none !important;
+        margin-right: -210px !important;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .service-visual {
+        height: 96px !important;
+    }
+
+    .about-container {
+        padding: 48px 0 !important;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        border-left: 0 !important;
+    }
+
+    .stat {
+        border-bottom: 1px solid rgba(7,87,217,.13) !important;
+    }
+
+    .site-footer .footer-inner {
+        min-height: 0 !important;
+        padding: 10px 0 !important;
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .site-footer .footer-brand {
+        justify-content: center !important;
+    }
+
+    .site-footer .footer-email {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-visual {
+        height: 320px !important;
+    }
+
+    .hero-falcon {
+        width: 650px !important;
+        margin-right: -170px !important;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .service-visual {
+        height: 82px !important;
+    }
+
+    .service-card p {
+        min-height: 68px !important;
+    }
+}
